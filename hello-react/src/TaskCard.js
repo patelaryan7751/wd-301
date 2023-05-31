@@ -5,13 +5,14 @@ const TaskCard = (props) => {
   return (
     <div className="border-4 border-gray-400 p-3 m-3">
       <h2 className="text-xl font-bold mb-2">{props.title}</h2>
-      {props.completed ? (
+
+      {props.dueDate ? (
+        <p className="text-gray-600  font-semibold">Due on: {props?.dueDate}</p>
+      ) : props.completedAtDate ? (
         <p className="text-gray-600 font-semibold">
           Completed on: {props?.completedAtDate}
         </p>
-      ) : (
-        <p className="text-gray-600  font-semibold">Due on: {props?.dueDate}</p>
-      )}
+      ) : null}
 
       <p className="text-gray-600  font-semibold">
         Assignee: {props.assigneeName}

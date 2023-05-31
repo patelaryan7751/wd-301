@@ -17,13 +17,11 @@ function App() {
             title="Build the website with static content"
             dueDate="10th April"
             assigneeName="Rohit S"
-            completed={false}
           />
           <TaskCard
             title="Add a blog"
             dueDate="22nd March"
             assigneeName="Rohit M"
-            completed={false}
           />
           <div className="m-3">
             <button className="border-4 border-slate-100 bg-gray-300 p-1 w-full text-left font-semibold text-xl">
@@ -37,13 +35,11 @@ function App() {
             title="Deign the mockup"
             completedAtDate="10th April"
             assigneeName="Rohit M"
-            completed={true}
           />
           <TaskCard
             title="Get approval from principal"
             completedAtDate="20th April"
             assigneeName="Ajay S"
-            completed={true}
           />
         </div>
       </div>
