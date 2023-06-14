@@ -3,8 +3,8 @@ import React from "react";
 
 const HomePage: React.FC = () => {
   return (
-    <div>
-      <h1>Task Manager</h1>
+    <div className="text-center m-3">
+      <p className="text-2xl">Task Manager</p>
       <p>Welcome to the Task Manager application!</p>
     </div>
   );
