@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./TaskCard.css";
 import { TaskItem } from "./types";
 
@@ -8,7 +9,9 @@ interface TaskItemProps extends TaskItem {
 const Task = (props: TaskItemProps) => {
   return (
     <li className="TaskItem shadow-md border border-slate-100 list-none">
-      <h2 className="text-base font-bold my-2">{props.title}</h2>
+      <Link to={`/tasks/${props.taskId}`}>
+        <h2 className="text-base font-bold my-1">{props.title}</h2>
+      </Link>
       <p className="text-sm text-slate-500">{props.dueDate}</p>
       <p className="text-sm text-slate-500">Description: {props.description}</p>
       <button
