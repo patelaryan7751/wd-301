@@ -13,16 +13,12 @@ const Dashboard: React.FC = () => {
         </h1>
       </div>
       <div>
-        <p>
-          <span className="text-2xl m-2">Name: {userData?.name}</span>
-        </p>
-        <p>
-          <span className="text-2xl m-2">Email: {userData?.email}</span>
-        </p>
+        <p id="name">{userData?.name}</p>
+        <p id="email">{userData?.email}</p>
       </div>
       <div>
         <button
-          id="logout-link"
+          id="#logout-link"
           onClick={() => {
             localStorage.removeItem("userData");
             localStorage.removeItem("authToken");
