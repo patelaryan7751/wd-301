@@ -18,7 +18,7 @@ const Dashboard: React.FC = () => {
       </div>
       <div>
         <button
-          id="#logout-link"
+          id="logout-link"
           onClick={() => {
             localStorage.removeItem("userData");
             localStorage.removeItem("authToken");
