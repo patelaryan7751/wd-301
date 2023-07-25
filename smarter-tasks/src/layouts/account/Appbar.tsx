@@ -2,9 +2,8 @@ import { useState, useContext, Fragment } from "react";
 import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 import { ThemeContext } from "../../context/theme";
-import Logo from "../../assets/images/logo.png";
 import { Link, useLocation } from "react-router-dom";
-
+import logo from "../../assets/images/logo.png";
 const userNavigation = [
   { name: "Profile", href: "#" },
   { name: "Sign out", href: "/logout" },
@@ -41,7 +40,7 @@ const Appbar = () => {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <img className="h-8" src={Logo} alt="Smarter Tasks" />
+                  <img className="h-8" src={logo} alt="Smarter Tasks" />
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
