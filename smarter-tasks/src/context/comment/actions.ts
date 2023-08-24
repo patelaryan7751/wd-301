@@ -21,7 +21,7 @@ export const fetchComments = async (
     const sortedData = data.slice().sort((a: any, b: any) => {
       let dateA = new Date(a.createdAt).getTime(),
         dateB = new Date(b.createdAt).getTime();
-      let diff = dateB - dateA;
+      let diff = dateA - dateB;
       return diff;
     });
     dispatch({ type: "FETCH_COMMENTS_SUCCESS", payload: sortedData });

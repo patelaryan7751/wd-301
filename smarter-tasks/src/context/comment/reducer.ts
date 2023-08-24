@@ -38,7 +38,7 @@ export const reducer = (
           .sort((a: any, b: any) => {
             let dateA = new Date(a.createdAt).getTime(),
               dateB = new Date(b.createdAt).getTime();
-            let diff = dateB - dateA;
+            let diff = dateA - dateB;
             return diff;
           }),
       };
