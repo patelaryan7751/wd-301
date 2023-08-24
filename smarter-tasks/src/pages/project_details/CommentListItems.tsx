@@ -1,5 +1,5 @@
 import { useCommentsState } from "../../context/comment/context";
-import { Comment } from "../../context/comment/reducer";
+import { Comment } from "../../context/comment/types";
 import { useMembersState } from "../../context/members/context";
 export default function CommentListItems() {
   let state: any = useCommentsState();

@@ -1,10 +1,6 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
-import {
-  reducer,
-  initialState,
-  CommentsState,
-  CommentsActions,
-} from "./reducer";
+import { reducer, initialState } from "./reducer";
+import { CommentsActions, CommentsState } from "./types";
 const CommentsStateContext = createContext<CommentsState | undefined>(
   undefined
 );

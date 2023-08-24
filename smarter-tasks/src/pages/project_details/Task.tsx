@@ -6,7 +6,7 @@ import { Draggable } from "react-beautiful-dnd";
 import { useTasksDispatch } from "../../context/task/context";
 import { deleteTask } from "../../context/task/actions";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { addComment } from "../../context/comment/action";
+import { addComment } from "../../context/comment/actions";
 import { useCommentsDispatch } from "../../context/comment/context";
 import CommentList from "./CommentList";
 type Inputs = {
