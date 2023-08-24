@@ -33,14 +33,7 @@ export const reducer = (
     case "ADD_COMMENT_SUCCESS":
       return {
         ...state,
-        comments: [...state.comments, action.payload]
-          .slice()
-          .sort((a: any, b: any) => {
-            let dateA = new Date(a.createdAt).getTime(),
-              dateB = new Date(b.createdAt).getTime();
-            let diff = dateA - dateB;
-            return diff;
-          }),
+        comments: [...state.comments, action.payload],
       };
     default:
       return state;

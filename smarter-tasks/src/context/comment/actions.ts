@@ -21,7 +21,7 @@ export const fetchComments = async (
     const sortedData = data.slice().sort((a: any, b: any) => {
       let dateA = new Date(a.createdAt).getTime(),
         dateB = new Date(b.createdAt).getTime();
-      let diff = dateA - dateB;
+      let diff = dateB - dateA;
       return diff;
     });
     dispatch({ type: "FETCH_COMMENTS_SUCCESS", payload: sortedData });
@@ -38,8 +38,7 @@ export const addComment = async (
   dispatch: any,
   args: any,
   project_id: any,
-  task_id: any,
-  userObject: any
+  task_id: any
 ) => {
   try {
     const token = localStorage.getItem("authToken") ?? "";
@@ -67,6 +66,7 @@ export const addComment = async (
       type: "ADD_COMMENT_SUCCESS",
       payload: data,
     });
+    fetchComments(dispatch, project_id, task_id);
     return { ok: true };
   } catch (error) {
     console.error("Operation failed:", error);

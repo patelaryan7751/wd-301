@@ -8,6 +8,8 @@ import CheckIcon from "@heroicons/react/24/outline/CheckIcon";
 import { useProjectsState } from "../../context/projects/context";
 import { TaskDetailsPayload } from "../../context/task/types";
 import { useMembersState } from "../../context/members/context";
+import CommentList from "./CommentList";
+import CommentInput from "./CommentInput";
 type TaskFormUpdatePayload = TaskDetailsPayload & {
   selectedPerson: string;
 };
@@ -62,7 +64,7 @@ const TaskDetails = () => {
 
   function closeModal() {
     setIsOpen(false);
-    navigate("../../");
+    navigate("../");
   }
 
   const onSubmit: SubmitHandler<TaskFormUpdatePayload> = async (data) => {
@@ -197,6 +199,8 @@ const TaskDetails = () => {
                       </button>
                     </form>
                   </div>
+                  <CommentInput projectId={projectID} taskId={Number(taskID)} />
+                  <CommentList projectId={projectID} taskId={Number(taskID)} />
                 </Dialog.Panel>
               </Transition.Child>
             </div>
