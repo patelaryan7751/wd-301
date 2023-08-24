@@ -38,7 +38,8 @@ export const addComment = async (
   dispatch: any,
   args: any,
   project_id: any,
-  task_id: any
+  task_id: any,
+  userObject: any
 ) => {
   try {
     const token = localStorage.getItem("authToken") ?? "";
@@ -61,6 +62,7 @@ export const addComment = async (
       return { ok: false, error: data.errors[0].message };
     }
     console.log("dataT", data);
+
     dispatch({
       type: "ADD_COMMENT_SUCCESS",
       payload: data,

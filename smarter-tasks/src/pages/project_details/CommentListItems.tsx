@@ -1,8 +1,10 @@
 import { useCommentsState } from "../../context/comment/context";
 import { Comment } from "../../context/comment/reducer";
+import { useMembersState } from "../../context/members/context";
 export default function CommentListItems() {
   let state: any = useCommentsState();
   const { comments, isLoading, isError, errorMessage } = state;
+  let memberstate: any = useMembersState();
   console.log(comments, "llk");
   if (comments.length === 0 && isLoading) {
     return <span>Loading...</span>;
@@ -11,6 +13,10 @@ export default function CommentListItems() {
   if (isError) {
     return <span>{errorMessage}</span>;
   }
+  const getOwner = (id: number) => {
+    let owner = memberstate.members.find((member: any) => member.id === id);
+    return owner?.name;
+  };
 
   return (
     <div>
@@ -20,7 +26,7 @@ export default function CommentListItems() {
             <div className="flex-auto">
               <div className="flex items-baseline justify-between gap-x-4">
                 <p className="text-sm font-semibold leading-6 text-gray-900">
-                  {comment?.User?.name}
+                  {getOwner(Number(comment?.owner))}
                 </p>
                 <p className="flex-none text-xs text-gray-600">
                   {new Date(comment?.createdAt).toLocaleString("en-IN")}

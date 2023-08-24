@@ -63,7 +63,8 @@ const Task = forwardRef<
         owner: storedUserData?.id,
       },
       projectID,
-      task.id
+      task.id,
+      storedUserData
     );
     console.log(task.id, "jh");
     if (response.ok) {
