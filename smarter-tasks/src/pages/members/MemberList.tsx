@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { fetchMembers } from "../../context/members/actions";
 import { useMembersDispatch } from "../../context/members/context";
-import MemberListItems from "./MemberListItems";
+const MemberListItems = React.lazy(() => import("./MemberListItems"));
+import ErrorBoundary from "../../components/ErrorBoundary";
+
 const MemberList: React.FC = () => {
   const dispatchMembers = useMembersDispatch();
 
@@ -10,7 +12,11 @@ const MemberList: React.FC = () => {
   }, []);
   return (
     <div className="mt-5">
-      <MemberListItems />
+      <ErrorBoundary>
+        <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
+          <MemberListItems />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };
